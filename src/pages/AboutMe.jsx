@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './AboutMe.css'
+import './Page.css'
 
 function AboutMe() {
     return (
@@ -9,20 +9,21 @@ function AboutMe() {
             </div>
 
             <div className="content">
-                <h1>About Me</h1>
-                <p className="date">December 1, 2024</p>
+                <h1>David Geddam</h1>
+                <p className="date">December 1, 2025</p>
 
                 <div className="bio">
                     <p>
-                        I'm David. I like training models and working on interesting projects.
+                        I'm David. a current cs major, and working on interesting projects.
                     </p>
 
                     <p>
-                        This portfolio is built to showcase my work and share what I'm passionate about.
+                        ever since, i was a kid, i fell in love with computers, wanted to learn how they would work under the hood, and in the recent months, fell in interest in artificial intelligence.
                     </p>
 
+
                     <p>
-                        Currently seeking internships and opportunities to grow as a developer.
+                        currently seeking internships and relevant opportunities to grow.
                     </p>
                 </div>
             </div>

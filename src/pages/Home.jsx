@@ -12,23 +12,23 @@ function Home() {
             <div className="links">
                 <Link to="/about" className="link-box">
                     <h2>me</h2>
-                    <p className="subtitle">little bit about myself:)</p>
+                    <p className="subtitle">little bit about myself :)</p>
                 </Link>
 
-                <div className="link-box">
+                <Link to="/projects" className="link-box">
                     <h2>projects</h2>
                     <p className="subtitle">stuff that i worked on</p>
-                </div>
+                </Link>
 
-                <div className="link-box">
+                <Link to="/experience" className="link-box">
                     <h2>experience</h2>
                     <p className="subtitle">currently seeking internships</p>
-                </div>
+                </Link>
 
-                <div className="link-box">
-                    <h2>other sites</h2>
+                <Link to="/other-sites" className="link-box">
+                    <h2>other links</h2>
                     <p className="subtitle">resume, github, linkedin</p>
-                </div>
+                </Link>
             </div>
         </div>
     )

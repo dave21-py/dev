@@ -12,8 +12,8 @@
 .project-card {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding-bottom: 3rem;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
     border-bottom: 1px solid #333;
 }
 
@@ -24,11 +24,14 @@
 /* Media Container */
 .project-media {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    max-width: 400px;
+    aspect-ratio: 16 / 10;
+    max-height: 200px;
     background-color: #1a1a1a;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     border: 1px solid #333;
+    margin-bottom: 0.5rem;
 }
 
 .project-image,
@@ -51,7 +54,7 @@
 }
 
 .project-info h2 {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #fff;
     margin: 0;

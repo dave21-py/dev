@@ -20,7 +20,7 @@ function OtherSites() {
                     <h3>Resume</h3>
                     <p>
                         <a href="https://dave21-py.github.io/1/david_resumee.pdf" target="_blank" rel="noopener noreferrer" className="external-link">
-                            Download my resume (PDF)
+                            View Resume
                         </a>
                     </p>
 

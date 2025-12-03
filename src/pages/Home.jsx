@@ -22,7 +22,7 @@ function Home() {
 
                 <Link to="/experience" className="link-box">
                     <h2>experience</h2>
-                    <p className="subtitle">work experience, skills</p>
+                    <p className="subtitle">experience and edu background</p>
                 </Link>
 
                 <Link to="/other-sites" className="link-box">

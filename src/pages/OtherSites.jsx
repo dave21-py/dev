@@ -26,15 +26,15 @@ function OtherSites() {
 
                     <h3>GitHub</h3>
                     <p>
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="external-link">
-                            github.com/yourusername
+                        <a href="https://github.com/dave21-py" target="_blank" rel="noopener noreferrer" className="external-link">
+                            github.com/dave21-py
                         </a>
                     </p>
 
                     <h3>LinkedIn</h3>
                     <p>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="external-link">
-                            linkedin.com/in/yourprofile
+                        <a href="https://linkedin.com/in/david-geddam" target="_blank" rel="noopener noreferrer" className="external-link">
+                            linkedin.com/in/david-geddam
                         </a>
                     </p>
                 </div>

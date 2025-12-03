@@ -120,7 +120,7 @@
 .scroll-button {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    right: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;

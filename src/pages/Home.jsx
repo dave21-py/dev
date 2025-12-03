@@ -17,7 +17,7 @@ function Home() {
 
                 <Link to="/projects" className="link-box">
                     <h2>projects</h2>
-                    <p className="subtitle">stuff that i worked on</p>
+                    <p className="subtitle">stuff i worked on</p>
                 </Link>
 
                 <Link to="/experience" className="link-box">

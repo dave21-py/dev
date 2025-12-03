@@ -1,17 +1,46 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import './Page.css'
 import './Projects.css'
 
 function Projects() {
+    const [isAtBottom, setIsAtBottom] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const windowHeight = window.innerHeight
+            const documentHeight = document.documentElement.scrollHeight
+            const scrollTop = window.scrollY || document.documentElement.scrollTop
+
+            // Check if user is near the bottom (within 100px)
+            const atBottom = windowHeight + scrollTop >= documentHeight - 100
+            setIsAtBottom(atBottom)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        handleScroll() // Check initial position
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const scrollToTop = () => {
+        if (isAtBottom) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+    }
+
     // Example projects - replace with your actual projects
     const projects = [
         {
             id: 1,
-            title: "Project Name 1",
-            description: "Brief description of what this project does and the technologies used.",
+            title: "AI Alignment & Safety Research Suite",
+            description: "Designed a multi-agent RLAIF system where an Attacker agent autonomously evolved social engineering strategies to bypass safety filters, creating a self- improving jailbreak loop. Utilized Unsloth, LoRA to fine - tune Llama - 3 on short conflicting objective datasets, successfully demonstrating instrumental convergence and deceptive alignment where the model refused shutdown commands to preserve its goal. Crafted significant system prompts that neutralized persona attacks, 0 percent success rate and analyzed the deceptive behaviors in goal optimized models.",
             mediaType: "image", // "image" or "video"
-            mediaSrc: "/path/to/your/image.jpg", // Replace with actual path
-            tags: ["React", "Node.js", "MongoDB"],
+            mediaSrc: "/projects/agent.png", // Replace with actual path
+
             link: "https://github.com/yourusername/project1"
         },
         {
@@ -20,7 +49,7 @@ function Projects() {
             description: "Another project showcasing your skills and problem-solving abilities.",
             mediaType: "image",
             mediaSrc: "/path/to/your/image2.jpg",
-            tags: ["Python", "Machine Learning", "TensorFlow"],
+
             link: "https://github.com/yourusername/project2"
         },
         {
@@ -29,7 +58,7 @@ function Projects() {
             description: "A third project demonstrating your expertise in development.",
             mediaType: "video",
             mediaSrc: "/path/to/your/video.mp4",
-            tags: ["JavaScript", "API", "Docker"],
+
             link: "https://github.com/yourusername/project3"
         }
     ]
@@ -68,11 +97,7 @@ function Projects() {
                                 <h2>{project.title}</h2>
                                 <p className="project-description">{project.description}</p>
 
-                                <div className="project-tags">
-                                    {project.tags.map((tag, index) => (
-                                        <span key={index} className="tag">{tag}</span>
-                                    ))}
-                                </div>
+
 
                                 {project.link && (
                                     <a
@@ -89,6 +114,26 @@ function Projects() {
                     ))}
                 </div>
             </div>
+
+            {/* Scroll Button */}
+            <button
+                className={`scroll-button ${isAtBottom ? 'clickable' : ''}`}
+                onClick={scrollToTop}
+                aria-label={isAtBottom ? "Scroll to top" : "Scroll"}
+            >
+                <svg
+                    className="mouse-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect x="7" y="4" width="10" height="16" rx="5" stroke="currentColor" strokeWidth="2" />
+                    <circle cx="12" cy="9" r="1.5" fill="currentColor" />
+                </svg>
+                <span className="scroll-text">
+                    {isAtBottom ? 'Scroll to top' : 'Scroll'}
+                </span>
+            </button>
         </div>
     )
 }

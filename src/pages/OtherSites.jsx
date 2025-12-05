@@ -37,6 +37,13 @@ function OtherSites() {
                             linkedin.com/in/david-geddam
                         </a>
                     </p>
+
+                    <h3>𝕏</h3>
+                    <p>
+                        <a href="https://x.com/dave21_ai" target="_blank" rel="noopener noreferrer" className="external-link">
+                            https://x.com/dave21_ai
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>

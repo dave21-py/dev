@@ -10,7 +10,7 @@ function AboutMe() {
 
             <div className="content">
                 <h1>David Geddam</h1>
-                <p className="date">December 3, 2025</p>
+                <p className="date">December 5, 2025</p>
 
                 <div className="bio">
                     <p>
@@ -18,7 +18,7 @@ function AboutMe() {
                     </p>
 
                     <p>
-                        i was born in India, but soon was raised and grew up in Kuwait. Ever since, i was a kid, i fell in love with computers, wanted to learn how they would work under the hood, and in the recent months, fell in interest in artificial intelligence.
+                        i was born in India, later was raised and grew up in Kuwait. Ever since, i was a kid, i fell in love with computers, wanted to learn how they would work under the hood, and in the recent months, fell in interest in artificial intelligence. I have been experimenting with LLMs thus far.
                     </p>
 
 

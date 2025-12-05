@@ -27,7 +27,7 @@ function Home() {
 
                 <Link to="/other-sites" className="link-box">
                     <h2>other links</h2>
-                    <p className="subtitle">resume, github, linkedin</p>
+                    <p className="subtitle">resume, github, linkedin, 𝕏</p>
                 </Link>
             </div>
         </div>

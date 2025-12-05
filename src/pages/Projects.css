@@ -25,13 +25,17 @@
 .project-media {
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 16 / 10;
-    max-height: 200px;
     background-color: #1a1a1a;
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid #333;
     margin-bottom: 0.5rem;
+}
+
+/* For single images/videos, maintain aspect ratio */
+.project-media:not(:has(.project-media-grid)) {
+    aspect-ratio: 16 / 10;
+    max-height: 200px;
 }
 
 .project-image,
@@ -44,6 +48,21 @@
 
 .project-video {
     cursor: pointer;
+}
+
+/* Multiple Images Grid */
+.project-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.project-media-grid .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 /* Project Info */

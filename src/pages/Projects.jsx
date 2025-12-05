@@ -45,6 +45,18 @@ function Projects() {
         },
         {
             id: 2,
+            title: "Adversarial Vision Attack",
+            description: "Experimented an adversarial attack pipeline targeting famous computer vision architecture ResNet-50 to expose critical failures in deep neural networks. Implemented gradient-based perturbation algorithms, specifically Fast Gradient Sign Method (FGSM) and Iterative FGSM. Successfully generated 'silent' adversarial examples that forced the model to hallucinate a Chihuahua with 100% confidence from an input that remained identical to a Giant Panda. This experiment demonstrated the dangerous distinction between human perception and tensor operations, highlighting severe vulnerabilities in autonomous systems reliant on unverified visual inputs.",
+            mediaType: "image", // "image" or "video"
+            mediaSrcs: [
+                `${import.meta.env.BASE_URL}projects/panda_noise_fgsm.png`,
+                `${import.meta.env.BASE_URL}projects/panda_silent_attack.png`
+            ],
+
+            link: "https://github.com/dave21-py/Adversarial-vision-hack"
+        },
+        {
+            id: 3,
             title: "Tiny Siri - Edge-Optimized Intent Classification",
             description: "Tested a near high-performance intent classifier using a fine-tuned DistilBERT model, achieving 97% test accuracy by implementing a full data augmentation pipeline. Optimized the model for on-device deployment via PyTorch dynamic Quantization, reducing the memory footprint by 48% (255MB →132MB) while maintaining precision. Finally, deployed the inference pipeline to the web using Hugging Face Spaces and Streamlit.",
             mediaType: "video",
@@ -53,7 +65,7 @@ function Projects() {
             link: "https://huggingface.co/spaces/dave21-py/tiny_siri_demo"
         },
         {
-            id: 3,
+            id: 4,
             title: "BibleGPT",
             description: "Fine-tuned google's gemma-2-2B llm on the kjv dataset, to generate biblically-styled text, using natural language processing (NLP), transfer learning techniques, and parameter-Efficient Fine-Tuning (PEFT) with LoRA. Used a context aware system that dynamically injects biblical context (Book/Chapter) into the system prompt, enabling the llm to answer specific scriptural questions with near-high accuracy. Used AI-assisted coding for the entire frontend UI and successfully connected to a backend FastAPI Server that loads my saved fine-tuned model, from hugging face.",
             mediaType: "video",
@@ -62,7 +74,7 @@ function Projects() {
             link: "https://github.com/dave21-py/BibleGPT.git"
         },
         {
-            id: 4,
+            id: 5,
             title: "Student Performance Prediction",
             description: "Developed a prod-ready machine learning pipeline to predict student test scores, handling the full lifecycle of a data science project, from data ingestion and transformation to model evaluation. Implemented a modular codebase in python that trains and compares multiple regression models (Random Forest, XGBoost, CatBoost) to select the best-performing algorithm.",
             mediaType: "video",
@@ -71,7 +83,7 @@ function Projects() {
             link: "https://github.com/dave21-py/mlproject"
         },
         {
-            id: 4,
+            id: 6,
             title: "Cuatros- tetris inspired game built with JavaFX",
             description: "Designed a fully responsive UI with multiple controls and multiple screens, enhancing user engagement and gameplay experience. Collaborated with team members, on core game mechanics, frontend development and applied JavaFX GUI design, using OOD principles.",
             mediaType: "video",
@@ -95,11 +107,25 @@ function Projects() {
                         <div key={project.id} className="project-card">
                             <div className="project-media">
                                 {project.mediaType === "image" ? (
-                                    <img
-                                        src={project.mediaSrc}
-                                        alt={project.title}
-                                        className="project-image"
-                                    />
+                                    // Check if project has multiple images
+                                    project.mediaSrcs ? (
+                                        <div className="project-media-grid">
+                                            {project.mediaSrcs.map((src, index) => (
+                                                <img
+                                                    key={index}
+                                                    src={src}
+                                                    alt={`${project.title} - Image ${index + 1}`}
+                                                    className="project-image"
+                                                />
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <img
+                                            src={project.mediaSrc}
+                                            alt={project.title}
+                                            className="project-image"
+                                        />
+                                    )
                                 ) : (
                                     <video
                                         src={project.mediaSrc}
